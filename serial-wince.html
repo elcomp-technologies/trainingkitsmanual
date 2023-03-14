@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.button').click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+	<script type="text/javascript" src="sh_main.js"></script>
+	<script type="text/javascript" src="sh_cpp.js"></script>
+	<script type="text/javascript" src="sh_csharp.js"></script>
+	<link rel="stylesheet" type="text/css" href="sh_golden.css" />
+
+  </head>
+  <body onload="sh_highlightDocument();">
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+<h2>Serial Port Programming in Native (Windows Embedded CE)</h2>
+
+Functions and Structures used for serial communications are defined in the <b>Winbase.h</b> header file. Reading to and writing from a serial communications port on a Windows CE-based device is done by calling input and output functions. The following table describes functions and structures defined in the <b>Winbase.H</b> header file.
+<br/><br/>
+<table>
+<tr class="t-header">
+<td>Function</td><td>Description</td>
+</tr>
+<tr>
+<td>CreateFile</td><td>Open a serial port.</td>
+</tr>
+<tr>
+<td>GetCommState</td><td>Fills in a device-control block - DCB Structure - with the current control settings for a specified communication device.</td>
+</tr>
+<tr>
+<td>SetCommState</td><td>Configures a communication device according to the specifications in a DCB structure. The function reinitializes all hardware and control settings, but does not empty I/O queues.</td>
+</tr>
+<tr>
+<td>GetCommTimeouts</td><td>Retrieves the time-out parameters for all read/write operations on a specified communication device.</td>
+</tr>
+<tr>
+<td>Set CommTimeouts</td><td>Sets the time-out parameters for all read/write operations on a specified communication device.</td>
+</tr>
+<tr>
+<td>WriteFile</td><td>Write data to a serial port, which transfer data to the device at the other end or a serial connection.</td>
+</tr>
+<tr>
+<td>ReadFile</td><td>Reads data from a serial port, which receives data from a device at the other end of a serial connection.</td>
+</tr>
+<tr>
+<td>SetCommMask</td><td>Specifies a set of events to monitor for a communication device.</td>
+</tr>
+<tr>
+<td>GetCommMask</td><td>Retrieves the value of the event mask for a specified communication device.</td>
+</tr>
+<tr>
+<td>WaitCommMask</td><td>Wait for an event to occur for a specified communication device. The set of events monitored by WaitCommEvent is contained in the event mask associated with the device handle.</td>
+</tr>
+<tr>
+<td>ClearCommBreak</td><td>Restores character transmission for a specified communication device and places the transmission line in a non-break state.</td>
+</tr>
+<tr>
+<td>ClearCommError</td><td>Retrieves communication error data and reports the current status of a specified communication device.</td>
+</tr>
+</table>
+
+<h4>1.	Opening a Serial Port</h4>
+<pre class="sh_cpp">
+// Open the serial port.
+hComDev = CreateFile(lpPortName, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+
+//1st: LPCTSTR lpPortName, Pointer to the name of the port
+//2nd: DWORD dwDesiredAccess, Access (read-write) mode
+//3rd: DWORD dwShareMode, Share mode. 0=COM port cannot be shared
+//4th: LPSECURITY_ATTRIBUTES lpSecurityAttributes, Pointer to the security attribute. 
+//     Always NULL for Windows CE
+//5th: DWORD dwCreationDisposition, How to open the serial port
+//6th: DWORD dwFlagsAndAttributes, Port attributes. Non-overlapped operation only
+//7th: HANDLE hTemplateFile, Handle to port with attribute to copy. Always NULL for Windows CE
+</pre>
+
+<h4>2.	Configuring a Serial Port</h4>
+
+<pre class="sh_cpp">
+GetCommState(hComDev, &PortDCB);	//Get the port default setting
+PortDCB.BaudRate = Baudrate;	// Current baud
+PortDCB.fBinary = TRUE;			// Binary mode; no EOF check 
+PortDCB.fParity = TRUE;			// Enable parity checking 
+PortDCB.fOutxCtsFlow = FALSE;		// No CTS output flow control 
+PortDCB.fDtrControl = FALSE;		// No DSR output flow control 
+PortDCB.fDtrControl = DTR_CONTROL_ENABLE;	// DTR flow control type 
+PortDCB.fDsrSensitivity = FALSE;	// DSR sensitivity
+PortDCB.fTXContinueOnXoff = TRUE;	// XOFF continues Tx
+PortDCB.fOutX = FALSE;	// No XON/XOFF out flow control
+PortDCB.fInX = FALSE;	// No XON/XOFF in flow control	
+PortDCB.fErrorChar = FALSE;	// Disable error replacement	
+PortDCB.fNull = FALSE;		// Disable null stripping	
+PortDCB.fRtsControl = RTS_CONTROL_ENABLE;	// RTS flow control
+PortDCB.fAbortOnError = FALSE;	// Do not abort reads/writes on error
+PortDCB.ByteSize = byteSize;	// Number of bits/byte, 4-8	
+PortDCB.Parity = Parity;		// 0-4=no,odd,even,mark,space
+PortDCB.StopBits = Stopbits;		// 0,1,2 = 1, 1.5, 2
+
+// Configure the port according to the specifications of the DCB
+// structure.
+if (!SetCommState(hComDev, &PortDCB))
+{
+	// Could not configure the serial port.
+	dwError = GetLastError();
+	return false;
+}
+</pre>
+
+<h4>3.	Configuring Time-outs</h4>
+<pre class="sh_cpp">
+// Retrieve the timeout parameters for all read and write operations
+// on the port.
+GetCommTimeouts(hComDev, &CommTimeouts);
+
+// Change the COMMTIMEOUTS structure settings.
+CommTimeouts.ReadIntervalTimeout = MAXWORD;
+// The maximum amount of time in milliseconds to elapse between characters arriving at the port.
+
+CommTimeouts.ReadTotalTimeoutMultiplier = 0;
+// Read timeout multiplier in milliseconds. 
+// This figure is multiplied by the number of characters 
+// being read to obtain the overall timeout period.
+
+CommTimeouts.ReadTotalTimeoutConstant = 0;
+// Timeout constant in milliseconds. 
+// This value is added to the value calculated using the ReadTotalTimeout-Multiplier.
+
+CommTimeouts.WriteTotalTimeoutConstant = 1000;
+// Timeout constant in milliseconds. This value is added to the value
+calculated using the WriteTotalTimeout-Multiplier.
+
+CommTimeouts.WriteTotalTimeoutMultiplier = 10;
+// Write timeout multiplier in milliseconds. This figure is multiplied by the
+number of characters being written to obtain the overall timeout period.
+
+// Set the timeout parameters for all read and write operations
+// on the port.
+if (!SetCommTimeouts(hComDev, &CommTimeouts))
+{
+	// Could not set the timeout parameters.
+	dwError = GetLastError();
+	return false;
+}
+</pre>
+
+<h4>4. Writing to a Serial Port</h4>
+<pre class="sh_cpp">
+long dwBytesToWrite;
+DWORD dwBytesWritten;
+
+dwBytesToWrite = strlen(sendText);
+
+WriteFile(hComDev, sendText, dwBytesToWrite, &dwBytesWritten, NULL);
+//Parameters
+//1. Port handle
+//2. Pointer to data to write
+//3. Number of bytes to write
+//4. Pointer to number of bytes written
+//5. Must be NULL for Windows CE
+</pre>
+<h4>5.   Reading from a Serial Port</h4>
+<pre class="sh_cpp">
+DWORD dwBytesRead;
+char szBuffer[512];
+bool bReadStatus;
+
+bReadStatus = ReadFile(hComDev, szBuffer, dwBytesRead, &dwBytesRead, NULL);
+//Parameters:-
+//1. Port handle
+//2. Pointer to data to read
+//3. Number byte to read
+//4. Pointer to number of bytes read
+//5. Must be NULL for Windows CE
+</pre>
+
+<h4>6.   Using Communication Events</h4>
+<pre class="sh_cpp">
+//Specified serial port event to be monitored for port
+SetCommMask(pSerialMonitor->hComDev, EV_RXCHAR);
+
+while (pSerialMonitor->hComDev != INVALID_HANDLE_VALUE)
+{
+	//wait for a event to occur for port
+	if (WaitCommEvent(pSerialMonitor->hComDev, &dwEvent, NULL))
+	{
+		if (dwEvent & EV_RXCHAR)
+		{
+			PostMessage(pSerialMonitor->m_hParentWnd,pSerialMonitor->m_uMessage,0,0);
+		}
+	}
+}
+</pre>
+
+<h4>7.	Closing a Serial Port</h4>
+<pre class="sh_cpp">
+CloseHandle(hComDev);		//close port handle
+</pre>
+
+
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

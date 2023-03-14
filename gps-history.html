@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.button').click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+  </head>
+  <body>
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+<h3>6.2	  GPS History</h3>
+The design of GPS is based partly on similar ground-based radio navigation systems, such as LORAN and the Decca Navigator developed in the early 1940s, and used during World War II. In 1956 Friedwardt Winterberg proposed a test of general relativity using accurate atomic clocks placed in orbit in artificial satellites. To achieve accuracy requirements, GPS uses principles of general relativity to correct the satellites' atomic clocks. Additional inspiration for the GPS came when the Soviet Union launched the first man-made satellite, Sputnik in 1957. A team of U.S. scientists led by Dr. Richard B. Kershner were monitoring Sputnik's radio transmissions. They discovered that, because of the Doppler effect, the frequency of the signal being transmitted by Sputnik was higher as the satellite approached, and lower as it continued away from them. They realized that since they knew their exact location on the globe, they could pinpoint where the satellite was along its orbit by measuring the Doppler distortion.
+<br/><br/>
+The first satellite navigation system, Transit, used by the United States Navy, was first successfully tested in 1960. It used a constellation of five satellites and could provide a navigational fix approximately once per hour. In 1967, the U.S. Navy developed the Timation satellite which proved the ability to place accurate clocks in space, a technology that GPS relies upon. In the 1970s, the ground-based Omega Navigation System, based on phase comparison of signal transmission from pairs of stations, became the first worldwide radio navigation system. However, limitations of these systems drove the need for a more universal navigation solution with greater accuracy.
+<br/><br/>
+While there were wide needs for accurate navigation in military and civilian sectors, almost none of those were seen as justification for the billions of dollars it would cost in research, development, deployment, and operation for a complex constellation of navigation satellites. However during the Cold War arms race, the nuclear threat to the very existence of the United States was the one need that did justify this cost in the view of the US Congress. And this deterrent effect is why GPS was funded. The nuclear triad consisted of the US Navy's submarine-launched ballistic missiles (SLBMs) along with the US Air Force's strategic bombers and intercontinental ballistic missiles (ICBMs). Considered vital to the nuclear deterrence posture, accurate determination of the SLBM launch position was a force multiplier. Precise navigation would enable US submarines to get an accurate fix of their positions prior to launching their SLBMs. The US Air Force with two-thirds of the nuclear triad also had requirements for a more accurate and reliable navigation system. The Navy and Air Force were developing their own technologies in parallel to solve what was essentially the same problem. 
+<br/><br/>
+To increase the survivability of ICBMs, there was a proposal to use mobile launch platforms so the need to fix the launch position had similarity to the SLBM situation. In 1960, the Air Force proposed a radio-navigation system called MOSAIC (Mobile System for Accurate ICBM Control) that was essentially a 3-D LORAN. A follow-on study called Project 57 was worked in 1963 and it was "in this study that the GPS concept was born." That same year the concept was pursued as Project 621B, which had "many of the attributes that you now see in GPS" and promised increased accuracy for Air Force bombers as well as ICBMs. Updates from the Navy Transit system were too slow for the high speeds that the Air Force operated at. The Navy Research Laboratory continued advancements with their Timation (Time Navigation) satellites, first launched in 1967, and with the third one in 1974 carrying the first atomic clock put into orbit.
+<br/><br/>
+With these parallel developments out of the 1960s, it was realized that a superior system could be developed by synthesizing the best technologies from 621B, Transit, Timation and SECOR in a multi-service program. Over the Labor Day weekend in 1973, a meeting of about 12 military officers at the Pentagon discussed the creation of a Defense Navigation Satellite System (DNSS). It was at this meeting that "the real synthesis that became GPS was created." Later that year, the DNSS program was named Navstar. With the individual satellites being associated with the name Navstar (as with the predecessors Transit and Timation), a more fully encompassing name was used to identify the constellation of Navstar satellites. This more complete name was Navstar-GPS which was later shortened simply to GPS.
+<br/><br/>
+After Korean Air Lines Flight 007, carrying 269 people, was shot down in 1983 after straying into the USSR's prohibited airspace, in the vicinity of Sakhalin and Moneron Islands, President Ronald Reagan issued a directive making GPS freely available for civilian use, once it was sufficiently developed, as a common good. The first satellite was launched in 1989, and the 24th and last satellite was launched in 1994.
+<br/><br/>
+Initially, the highest quality signal was reserved for military use, and the signal available for civilian use was intentionally degraded ("Selective Availability", SA). This changed with U.S. President Bill Clinton ordering Selective Availability turned off at midnight May 1, 2000, improving the precision of civilian GPS from 300 meters (about 1000 feet) to 20 meters (about 65 feet). The U.S. military by then had the ability to deny GPS service to potential adversaries on a regional basis.
+<br/><br/>
+<table>
+<caption><span class="bold">Summary of satellites</span></caption>
+<tr class="t-header">
+<td rowspan="2">Block</td>
+<td rowspan="2">Launch Period</td>
+<td colspan="4">Satellite launches</td>
+<td rowspan="2">Currently in orbit and healthy</td>
+</tr>
+<tr class="t-header">
+<td>Success</td>
+<td>Failure</td>
+<td>In preparation</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>I</td>
+<td>1978-1985</td>
+<td>10</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+
+</tr>
+<tr>
+<td>II</td>
+<td>1989-1990</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>IIA</td>
+<td>1990-1997</td>
+<td>19</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10 of the 19 launched</td>
+</tr>
+<tr>
+
+<td>IIR</td>
+<td>1997-2004</td>
+<td>12</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>12 of the 13 launched</td>
+</tr>
+<tr>
+<td>IIR-M</td>
+
+<td>2005-2009</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>7 of the 8 launched</td>
+</tr>
+<tr>
+<td>IIF</td>
+<td>2010-2011</td>
+
+<td>1</td>
+<td>0</td>
+<td>11</td>
+<td>0</td>
+<td>1 of the 1 launched</td>
+</tr>
+<tr>
+<td>IIIA</td>
+<td>2014-?</td>
+<td>0</td>
+
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+</tr>
+<tr>
+<td>IIIB</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+
+<td>0</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>IIIC</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+
+<td>16</td>
+<td>0</td>
+</tr>
+<tr>
+<td colspan="2">Total</td>
+<td>59</td>
+<td>2</td>
+<td>11</td>
+<td>36</td>
+<td>30</td>
+
+</tr>
+<tr>
+<td colspan="7" style="font-size: smaller;">(Last update: 24 May 2010)<br>
+<p>PRN 01 from Block IIR-M is unhealthy<br>
+PRN 25 from Block IIA is unhealthy<br>
+PRN 32 from Block IIA is unhealthy<br>
+</p>
+
+</td>
+</tr>
+</table>
+<br/>
+
+<h3>Summary of satellites</h3>
+<ul>
+<li>In 1972, the U.S. Air Force Central Inertial Guidance Test Facility (Holloman AFB), conducted developmental flight tests of two prototype GPS receivers over White Sands Missile Range, using ground-based pseudo-satellites.</li>
+<li>In 1978, the first experimental Block-I GPS satellite was launched.</li>
+<li>In 1983, after Soviet interceptor aircraft shot down the civilian airliner KAL 007 that strayed into prohibited airspace due to navigational errors, killing all 269 people on board, U.S. President Ronald Reagan announced that the GPS would be made available for civilian uses once it was completed.</li>
+<li>By 1985, ten more experimental Block-I satellites had been launched to validate the concept.</li>
+<li>On February 14, 1989, the first modern Block-II satellite was launched.</li>
+<li>In 1992, the 2nd Space Wing, which originally managed the system, was de-activated and replaced by the 50th Space Wing.</li>
+<li>By December 1993, the GPS achieved initial operational capability.</li>
+<li>By January 17, 1994 a complete constellation of 24 satellites was in orbit.</li>
+<li>Full Operational Capability was declared by NAVSTAR in April 1995.</li>
+<li>In 1996, recognizing the importance of GPS to civilian users as well as military users, U.S. President Bill Clinton issued a policy directive declaring GPS to be a dual-use system and establishing an Interagency GPS Executive Board to manage it as a national asset.</li>
+<li>In 1998, U.S. Vice President Al Gore announced plans to upgrade GPS with two new civilian signals for enhanced user accuracy and reliability, particularly with respect to aviation safety and in 2000 the U.S. Congress authorized the effort, referring to it as GPS III.</li>
+<li>In 1998, GPS technology was inducted into the Space Foundation Space Technology Hall of Fame.</li>
+<li>On May 2, 2000 "Selective Availability" was discontinued as a result of the 1996 executive order, allowing users to receive a non-degraded signal globally.</li>
+<li>In 2004, the United States Government signed an agreement with the European Community establishing cooperation related to GPS and Europe's planned Galileo system.</li>
+<li>In 2004, U.S. President George W. Bush updated the national policy and replaced the executive board with the National Executive Committee for Space-Based Positioning, Navigation, and Timing.</li>
+<li>November 2004, QUALCOMM announced successful tests of assisted GPS for mobile phones.</li>
+<li>In 2005, the first modernized GPS satellite was launched and began transmitting a second civilian signal (L2C) for enhanced user performance.</li>
+<li>On September 14, 2007, the aging mainframe-based Ground Segment Control System was transitioned to the new Architecture Evolution Plan.</li>
+<li>The most recent launch was on May 28, 2010.The oldest GPS satellite still in operation was launched on November 26, 1990, and became operational on December 10, 1990.</li>
+<li>On May 19, 2009, the U. S. Government Accountability Office issued a report warning that some GPS satellites could fail as soon as 2010.</li>
+<li>On May 21, 2009, the Air Force Space Command allayed fears of GPS failure saying "There's only a small risk we will not continue to exceed our performance standard."</li>
+<li>On January 11, 2010, an update of ground control systems caused a software incompatibility with 8000 to 10000 military receivers manufactured by a division of Trimble Navigation Limited of Sunnyvale, Calif.</li>
+</ul>
+
+
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

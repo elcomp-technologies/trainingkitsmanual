@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+			$('#training h3').click(function() {
+				$('#menu1').toggle('slow');
+				return false;
+			});
+
+			$('#operation h3').click(function() {
+				$('#menu2').toggle('slow');
+				return false;
+			});
+
+			$('#programming h3').click(function() {
+				$('#menu3').toggle('slow');
+				return false;
+			});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.button').click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+  </head>
+  <body>
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+<h2>Chapter 9: ZigBee</h2>
+
+<h3>9.1	ZigBee Introduction</h3>
+
+Zigbee is a wireless technology developed as an open global standard to address the unique needs of low-cost, low-power wireless M2M networks. The Zigbee standard operates on the IEEE802.15.4 physical radio specification and operates in unlicensed bands including 2.4Ghz, 900Mhz, and 868Mhz.
+<br/><br/>
+The Zigbee protocol has been created and ratified by member companies of the Zigbee Alliance. The Zigbee protocol was designed to provide an easy-to-use wireless data solution characterized by secure, reliable wireless network architectures.
+<br/><br/>
+Zigbee protocol features include:-<br/>
+<ul>
+<li>Support for multiple network topologies such as point-to-point, point-to-multipoint, and mesh networks.</li>
+<li>Low duty cycle- provides long battery life</li>
+<li>Low lantency</li>
+<li>Direct sequence Spread spectrum (DSSS)</li>
+<li>Up to 65000 nodes per network</li>
+<li>128-bit AES encryption for secure data connections</li>
+<li>Collision avoidance, retries, and acknowledgements</li>
+</ul>
+
+A key component of Zigbee is ability to support mesh networking. In a mesh network, nodes are interconnected with other nodes so that multiple pathways connect each node. Connections between nodes are dynamically updated and optimized through sophisticated, built-in mesh routing table.
+<br/><br/>
+<img src="zigbee.jpg" alt="zigbee"/><br/><br/>
+Mesh networks are decentralized in natural; each node is capable of self-discovery on the network. Also, as nodes leave the network, the mesh topology allows the nodes to reconfigure routing paths based on the new network structure. The characteristics of mesh topology and ad-hoc routing provide greater stability in changing conditions or failure at single nodes.
+<br/><br/>
+<img src="zigbee-type.jpg" alt="zigbee type"/><br/><br/>
+The Zigbee protocols build on recent algorithm research (Ad-hoc On-Demand Distance Vector, AODV) to automatically construct a low-speed ad-hoc network of nodes. In most large network instance, the network will be a cluster of clusters. It also forms a mesh or a single cluster.
+<br/><br/>
+<span class="bold">ZigBee Application</span>
+<br/><br/>
+Zigbee protocols are intended for use in embedded applications requiring low data rates and low power consumption.  Zigbee current focus is to define a general-purpose, inexpensive, self-organizing mesh network that can be used for industrial control, embedded sensing, medical data collection, smoke and intruder warning, building automation, home automation, etc.
+<br/><br/>
+Typical application areas include:-
+<ul>
+<li>Home Entertainment and control - Smart lighting, advanced temperature control, safety and security, movies and music.</li>
+<li>Home Awareness - Water sensors, power sensors, energy monitoring, smoke and fire detectors, smart appliance and access sensors.</li>
+<li>Mobile Service - m-payment, m-monitoring and control, m-security and access control, m-healthcare and tele-assist.</li>
+<li>Commercial Building - Energy monitoring, HVAC, lighting, access control.</li>
+<li>Industrial Plant - Process control, asset management, environment management, enery management, industrial device control, machine-to-machine (M2M) communication.</li>
+</ul>
+
+<span class="bold">Zigbee Device Type:-</span>
+<ul>
+<li>Zigbee Coordinator - the coordinator forms the root of the network tree and might bridge to other networks. There is exactly one Zigbee coordinator in each network since it is the device that started the network originally. It is able to store information about the network, including acting as the Trust Centre & repository for security keys.</li>
+<li>Zigbee Router - router can act as an intermediate router, passing on data from other devices.</li>
+<li>Zigbee End-device - Contains just enough functionality to talk to the parent node (either the coordinator or a router); it cannot relay data from each other devices. This relationship allows the node to be asleep a significant amount of the time thereby giving long battery life. An end-device requires the least amount of memory, therefore can be less expensive to manufacture than a router or coordinator.</li>
+</ul>
+<img src="zigbee-flow.jpg" alt="zigbee flow" width="680px"/>
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+	<link rel="stylesheet" type="text/css" media="print" href="./css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$(".button").click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+  </head>
+  <body>
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+			<h2>Chapter 2: History of Wireless Technologies</h2>
+<h4>Photophone</h4>
+The world's first wireless telephone conversation occurred in 1880, when Alexander Graham Bell and Charles Sumner Tainter invented and patented the photophone, a telephone that conducted audio conversations wirelessly over modulated light beams (which are narrow projections of electromagnetic waves). In that distant era when utilities did not yet exist to provide electricity, and lasers had not even been conceived of in science fiction, there were no practical applications for their invention, which was highly limited by the availability of both sunlight and good weather. Similar to free space optical communication, the photophone also required a clear line of sight between its transmitter and its receiver. It would be several decades before the photophone's principles found their first practical applications in military communications and later in fiber-optic communications.
+<br/>
+<h4>Radio</h4>
+The term "wireless" came into public use to refer to a radio receiver or transceiver (a dual purpose receiver and transmitter device), establishing its usage in the field of wireless telegraphy early on; now the term is used to describe modern wireless connections such as in cellular networks and wireless broadband Internet. It is also used in a general sense to refer to any type of operation that is implemented without the use of wires, such as "wireless remote control" or "wireless energy transfer", regardless of the specific technology (e.g. radio, infrared, ultrasonic) that is used to accomplish the operation. While Guglielmo Marconi and Karl Ferdinand Braun were awarded the 1909 Nobel Prize for Physics for their contribution to wireless telegraphy, it has only been of recent years that Nikola Tesla has been formally recognized as the true father and inventor of radio.
+<br/>
+<h4>Early wireless work</h4>
+David E. Hughes, eight years before Hertz's experiments, transmitted radio signals over a few hundred yards by means of a clockwork keyed transmitter. As this was before Maxwell's work was understood, Hughes' contemporaries dismissed his achievement as mere "Induction". In 1885, T. A. Edison used a vibrator magnet for induction transmission. In 1888, Edison deployed a system of signaling on the Lehigh Valley Railroad. In 1891, Edison obtained the wireless patent for this method using inductance (U.S. Patent 465,971).
+<br/><br/>
+In the history of wireless technology, the demonstration of the theory of electromagnetic waves by Heinrich Hertz in 1888 was important. The theory of electromagnetic waves was predicted from the research of James Clerk Maxwell and Michael Faraday. Hertz demonstrated that electromagnetic waves could be transmitted and caused to travel through space at straight lines and that they were able to be received by an experimental apparatus. The experiments were not followed up by Hertz. Jagadish Chandra Bose around this time developed an early wireless detection device and help increase the knowledge of millimeter length electromagnetic waves. Practical applications of wireless radio communication and radio remote control technology were implemented by later inventors, such as Nikola Tesla.
+
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

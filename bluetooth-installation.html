@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.button').click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+  </head>
+  <body>
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+<h3>8.2    Bluetooth Installation and Wiring</h3>
+
+<span class="bold">Development kit hardware specification</span>
+<br/><br/>
+The Bluetooth development kit comes with the following:-
+<ul>
+<li><span class="bold">Development board:</span> The motherboard is used to mount the chosen wireless module, providing RS232 interface and access to all the module interface pins.</li>
+<li><span class="bold">USB cable:</span> USB cable to provide power for development kit via onboard connector.</li>
+<li><span class="bold">Bluetooth USB connector:</span> Bluetooth module support Windows protocols stack.</li>
+<li><span class="bold">Serial cable:</span> RS232 interface cable to provide the communication between PC and wireless module.</li>
+</ul>
+<img src="bluetooth-layout.jpg" alt="layout" style="border:1px solid #000;"/>
+<br/><br/>
+The development board can be powered by:-
+<br/>
+<ul>
+<li>5V power from USB port</li>
+<li>External power supply via screw terminal</li>
+<li>External main power block via 2.1mm DC connector</li>
+</ul>
+The serial port pin signal<br/>
+<table>
+<tr class="t-header">
+<td>PIN #</td><td>Description</td><td>Signal</td><td>Direction</td>
+</tr>
+<tr>
+<td>1</td><td>Data Carrier Detect</td><td>DCD</td><td>Output</td>
+</tr>
+<tr>
+<td>2</td><td>Transmit Data</td><td>TD</td><td>Output</td>
+</tr>
+<tr>
+<td>3</td><td>Receive Data</td><td>RD</td><td>Input</td>
+</tr>
+<tr>
+<td>4</td><td>Data Set Ready</td><td>DSR</td><td>Input</td>
+</tr>
+<tr>
+<td>5</td><td>Ground</td><td>GND</td><td>--</td>
+</tr>
+<tr>
+<td>6</td><td>Data Terminal Ready</td><td>DTR</td><td>Output</td>
+</tr>
+<tr>
+<td>7</td><td>Clear To Send</td><td>CTS</td><td>Input</td>
+</tr>
+<tr>
+<td>8</td><td>Request To Send</td><td>RTS</td><td>Output</td>
+</tr>
+<tr>
+<td>9</td><td>Board Power or RING Indicator</td><td>RI or POWER</td><td>Output</td>
+</tr>
+</table>
+
+
+
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

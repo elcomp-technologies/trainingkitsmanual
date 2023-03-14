@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>Wireless Communication Training Manual &copy;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="transmit_blue.png" rel="icon" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/plugin/jquery.ui.potato.menu.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="./jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+	<script type="text/javascript" src="./jquery/plugin/jquery.ui.potato.menu-min.js"></script>
+	<script type="text/javascript">
+
+	(function($) {
+	  $(document).ready(function(){
+
+		$("#left").load("menu.html",function() {
+
+			$('#menu1').ptMenu({vertical:true});
+			$('#menu2').ptMenu({vertical:true});
+			$('#menu3').ptMenu({vertical:true});
+
+		});
+
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.button').click(function() {
+			$('#left').toggle('slide');
+			$('#content').toggleClass('content-wide');
+			$('.button').toggleClass('button-wide');
+			$('.button a').text($('.button a').text() == '\>\>' ? $('.button span').text() : '\>\>');
+			return false;
+		});
+
+	  });
+	})(jQuery);
+	</script>
+
+  </head>
+  <body>
+  <div id="container">
+
+	<div id="header"></div>
+
+	<div id="main">
+
+		<div id="left">
+
+
+		</div>
+
+		<div id="content" class="content">
+
+			<div class="button"><a href="#">&lt;&lt;</a><span>&lt;&lt;</span></div>
+
+			<h3>3.2	 Infrared History</h3>
+
+<h4>The discovery of Infrared </h4>
+
+William Herschel, an amateur astronomer famous for the discovery of Uranus in 1781, made an important discovery in 1800. Herschel was familiar with Newton�s discovery that sunlight could be separated into that separate chromatic components via refraction through a glass prism. Herschel thought that the colors themselves might contain different levels of heat, so he devised a clever experiment to investigate this. Herschel passed sunlight through a glass prism to create a spectrum (the rainbow created when light is divided into its color components) and measured the temperatures of the different colors. He used three thermometers with blackened bulbs and placed one bulb in each color while the other two were placed outside the spectrum as controls.  
+<br /><br />
+ As he measured the temperature of the violet, blue, green, yellow, orange and red light, he noticed that all the colors had temperatures higher than the controls and that the temperature increased from the violet to the red part of the spectrum. After understanding this pattern, Herschel measured the temperature just beyond the red portion of the spectrum and found this area had the highest temperature of all and thus contained the most heat. What Herschel discovered was a form of light beyond red light. Herschel�s experiment was important not only because it lead to the discovery of infrared light, but because it was the first experiment that showed there were forms of light not visible to the human eye.  Beginning with Herschel�s observations we now understand the full nature of electromagnetic radiation and have developed a wide range of technologies to observe it and exploit it to man�s benefit.
+
+
+
+		</div>
+
+	</div>
+
+    <div id="googleadsense">
+        <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-6575727990565052";
+            /* 728x90 Leaderboard High Contrast Black */
+            google_ad_slot = "7843008916";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+	<div id="footer"></div>
+
+  </div>
+
+  </body>
+</html>

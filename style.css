@@ -1,0 +1,262 @@
+	li.potato-menu-item {
+	  font-size:12px;
+    }
+    ul.potato-menu-group {  
+      background: #333;
+	  margin-top:-15px;
+    }
+	
+    ul.potato-menu-group a {
+      width: 220px;
+    }
+    .potato-menu a {
+      padding:5px 12px 5px 12px;
+      background: #333;
+      color: #fff;
+      
+    }
+    .potato-menu a:hover {
+      background: #666;
+    }
+    .potato-menu-has-vertical  > a {
+      background: #333 url(./jquery/plugin/arrow_down.gif) right no-repeat;
+      
+    }
+    .potato-menu-has-holizontal  > a {
+      background: #333 url(./jquery/plugin/arrow_right.gif) right no-repeat;
+    }
+    .potato-menu-has-vertical > a:hover {
+      background: #666 url(./jquery/plugin/arrow_down.gif) right no-repeat;
+      
+    }
+    .potato-menu-has-holizontal > a:hover {
+      background: #666 url(./jquery/plugin/arrow_right.gif) right no-repeat;
+    }
+    
+    ul#menu1 {
+		
+		height:auto; 
+		width:245px; 
+		font-family:tahoma;
+		text-transform:capitalize;
+		padding-bottom:20px;
+	}
+	
+	ul#menu2{
+		height:auto; 
+		width:245px; 
+		font-family:tahoma;
+		text-transform:capitalize;
+		padding-bottom:20px;
+	}
+	
+	ul#menu3{
+		height:auto; 
+		width:245px; 
+		font-family:tahoma;
+		text-transform:capitalize;
+		padding-bottom:20px;
+	}
+	
+	li#t-hide{
+		display:none;
+	}
+	
+	body{
+		background:#111111;
+		font-family:tahoma;
+		font-size:12px;
+		color:white;
+		text-align: center;
+	}
+	
+	div#container{
+		text-align:left;
+		margin-left:auto;
+		margin-right:auto;
+		width:970px;
+		height:100%;
+		background-color: #333;
+		border:0px solid #fff;
+	}
+	
+	#header{
+		width:970px;
+		height:100px;
+		border-bottom: 4px solid #ff0000;
+		font-size:40px;
+		font-family: Times New Roman;
+		text-align:center;
+		line-height:100px;
+		color: #000;
+		background-color:#fff;
+		text-shadow: 0px 1px 0px #ccc;
+	}
+	
+	#header a{
+		text-decoration: none;
+		color: #000;
+	}
+	
+	#main{
+		width:970px;
+		height:100%;
+		border: 0px solid #fff;
+		background-color: #555;
+	}
+	
+	#left{
+		width:245px;
+		border: 0px solid #fff;
+		float:left;
+	}
+	
+	#left h3{
+		width:245px;
+		line-height:45px;
+		margin-top:0px;
+		min-height:50px;
+		text-align:center;
+		background-color: #ddd;
+		color: #000;
+		display:block;
+		text-shadow: 0px 1px 1px #ccc;
+		border-bottom: 4px solid #ff0000;
+	}
+	
+	.training{
+	
+	}
+	
+	.button a {
+		width:17px;
+		height:15px;
+		position:absolute;
+		color:#000;
+		text-decoration: none;
+		background-color:#ddd;
+		padding:3px;
+		margin-top:-15px;
+		margin-left:-48px;
+		font-size:10px;
+		font-weight:bold;
+	}
+	
+	.button-wide a {
+		width:17px;
+		height:15px;
+		position:absolute;
+		color:#000;
+		text-decoration: none;
+		background-color:#ddd;
+		padding:3px;
+		margin-top:-15px;
+		margin-left:-25px;
+		font-size:10px;
+		font-weight:bold;
+	}
+	
+	.button span{
+		display:none;
+	}
+	
+	.content {
+		
+		width:685px;
+		height:auto;
+		min-height:700px;
+		
+		float:left;
+		padding: 15px;
+		padding-left:25px;
+		background-color: #555;
+	}
+	
+	.content-wide {
+		
+		width:930px;
+		height:auto;
+		min-height:700px;
+		
+		float:left;
+		padding: 15px;
+		padding-left:25px;
+		background-color: #555;
+	}
+	
+	h4{
+		color : #fff;
+	}
+	
+	td{
+		border :1px solid #fff;
+		padding : 5px;
+	}
+	
+	tr {
+		background-color: #333;
+	}
+	
+	.t-header{
+		font-weight:bold;
+		background-color:#000;
+	}
+	
+	.serial-linux-list{
+		list-style-type:decimal;
+	}
+	
+	h3,h4{
+		color:#ffbe73;
+	}
+	
+	a,a img{
+		text-decoration:none;
+		color:#ff0;
+		border:0px;
+	}
+	
+	.bold{
+		font-weight:bold;
+	}
+	
+	#right{
+		width:180px;
+		height:auto;
+		min-height:500px;
+		border: 0px solid #fff;
+		float:left;
+		display:none;
+	}
+	
+	#footer{
+		line-height:45px;
+		text-align:center;
+		clear:both;
+		width:970px;
+		height:50px;
+		
+	}
+	
+	.top-button{
+		text-align:left;
+		border:0px solid;
+		width:970px;
+		margin-top:-75px;
+	}
+	.valid{
+		border:0px solid;
+		width:970px;
+	}
+	
+	.valid img{
+		text-decoration:none;
+		border:0px;
+		
+	}
+    
+    #googleadsense{
+        margin : 0 auto;   
+        width: 730px;
+        border: 0px solid;
+    }
